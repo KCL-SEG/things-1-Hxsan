@@ -8,8 +8,5 @@ def validate_quantity_range(value):
 # Create your models here.
 class Thing(models.Model):
     name = models.CharField(max_length=30, unique=True, blank=False)
-    description = models.TextField(blank=True, max_length=120)
+    description = models.CharField(blank=True, max_length=120)
     quantity = models.IntegerField(validators=[validate_quantity_range])
-
-    def __str__(self):
-        return self.name
